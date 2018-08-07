@@ -1,0 +1,1 @@
+﻿Get-Content hostnames.txt | foreach { if (Test-Connection -Count 1 -Quiet $_) {"$($_) is UP"} Else {"$($_) is DOWN"}} > "$(get-date -Format "dd-MMM-yyyy")-HostConnectivity.txt"
